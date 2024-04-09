@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Slider</title>
+    <!-- Include Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Include jQuery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body><section>
+    <div class="btn-section">
+        <h1>Shop</h1>
+        <div>
+        <button class="custom-nav-btn prev">◄</button>
+        <button class="custom-nav-btn next">►</button>
+        </div>
+    </div>
+    <div class="portfolio-slider owl-carousel">
+        
+        <div class="single-pf">
+            <img src="author3.jpg" alt="#">
+            <a href="portfolio-details.html" class="btn">View Details</a>
+        </div>
+        <div class="single-pf">
+            <img src="author3.jpg" alt="#">
+            <a href="portfolio-details.html" class="btn">View Details</a>
+        </div>
+        <div class="single-pf">
+            <img src="author3.jpg" alt="#">
+            <a href="portfolio-details.html" class="btn">View Details</a>
+        </div>
+        <div class="single-pf">
+            <img src="author3.jpg" alt="#">
+            <a href="portfolio-details.html" class="btn">View Details</a>
+        </div>
+        <div class="single-pf">
+            <img src="author3.jpg" alt="#">
+            <a href="portfolio-details.html" class="btn">View Details</a>
+        </div>
+
+        
+        <!-- Repeat for other portfolio items -->
+    </div>
+    </section>
+
+    <style>
+        section{
+            margin: 40px;
+        }
+          .btn-section{
+            display: inline-flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+          }
+         /* Customize Owl Carousel navigation arrows */
+         .custom-nav-btn {
+            background-color: #fff;
+            border: none;
+            color: #333;
+            font-size: 25px;
+            
+            cursor: pointer;
+            height: 40px;
+            border-radius: 50%;
+            
+            transition: 1s;
+            
+        }
+        .custom-nav-btn:hover {
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+        }
+        .custom-nav-btn.prev {
+            float: left;
+            margin-right: 10px;
+        }
+        .custom-nav-btn.next {
+            float: right;
+        }
+        .portfolio-slider {
+            display: flex;
+            overflow: hidden;
+            
+            
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .btn {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+
+    <!-- Include Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var slider = $('.portfolio-slider').owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 4000,
+                margin: 35,
+                smartSpeed: 600,
+                autoplayHoverPause: true,
+                loop: true,
+                nav: false, // Disable default navigation
+                dots: false,
+                responsive:{
+                    0: {
+                        items: 1,
+                    },
+                    480: {
+                        items: 2,
+                    },
+                    768: {
+                        items: 2,
+                    },
+                    1170: {
+                        items: 4,
+                    },
+                }
+            });
+
+            $('.prev').click(function() {
+                slider.trigger('prev.owl.carousel');
+            });
+
+            $('.next').click(function() {
+                slider.trigger('next.owl.carousel');
+            });
+        });
+    </script>
+</body>
+</html>
